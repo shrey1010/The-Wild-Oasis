@@ -1,11 +1,10 @@
 import styled from "styled-components";
 import { useState } from "react";
-
-import CreateCabinForm from "./CreateCabinForm";
 import { useDeleteCabin } from "./useDeleteCabin";
 import { formatCurrency } from "../../utils/helpers";
 import { HiPencil, HiSquare2Stack, HiTrash } from "react-icons/hi2";
 import { useCreateCabin } from "./useCreateCabin";
+import AddCabin from "./AddCabin";
 
 const TableRow = styled.div`
   display: grid;
@@ -96,7 +95,7 @@ function CabinRow({ cabin }) {
           </button>
         </div>
       </TableRow>
-      {showForm && <CreateCabinForm cabinToEdit={cabin} />}
+      {showForm && <AddCabin cabin={cabin}/>}
     </>
   );
 }
