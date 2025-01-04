@@ -7,8 +7,6 @@ export async function getCabins() {
     console.error(error);
     throw new Error("Cabins could not be loaded");
   }
-  console.log("Cabins loaded");
-  console.log(data); 
 
   return data;
 }
@@ -19,7 +17,7 @@ export async function createEditCabin(newCabin, id) {
   const imageName = `${Math.random()}-${newCabin.image.name}`.replaceAll(
     "/",
     ""
-  );  
+  );
   const imagePath = hasImagePath
     ? newCabin.image
     : `${supabaseUrl}/storage/v1/object/public/cabin-images/${imageName}`;
