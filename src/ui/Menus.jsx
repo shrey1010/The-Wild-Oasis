@@ -75,11 +75,11 @@ function Menus({ children }) {
   const open = setOpenId;
 
   return (
-    <MenusContext. 
+    <MenusContext.Provider
       value={{ openId, close, open, position, setPosition }}
     >
       {children}
-    </MenusContext.>
+    </MenusContext.Provider>
   );
 }
 
